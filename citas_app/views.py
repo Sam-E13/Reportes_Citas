@@ -304,8 +304,8 @@ class EstadisticasCitasView(APIView):
 
 class FiltrosCitasView(APIView):
     def get(self, request):
-        # URL del endpoint para obtener datos de filtros
-        API_URL_BASE = 'http://backend:8000/Catalogos/'
+        # Usar configuración del settings.py
+        API_URL_BASE = f'{settings.BACKEND_PROTOCOL}://{settings.BACKEND_HOST}:{settings.BACKEND_PORT}/Catalogos/'
         
         try:
             # Obtener datos de atletas
@@ -387,10 +387,12 @@ class GenerarReportePDFView(APIView):
     y enriqueciéndolos con información de catálogos relacionados.
     """
 
-    # Configuración de endpoints (podrían moverse a settings.py)
-    CITAS_API_URL = 'http://backend:8000/Modulos/Citas/'
-    CATALOGOS_API_URL = 'http://backend:8000/Catalogos/'
-    TIMEOUT = 10  # segundos
+    def __init__(self):
+        super().__init__()
+        # Usar configuración del settings.py
+        self.CITAS_API_URL = settings.API_CITAS
+        self.CATALOGOS_API_URL = f'{settings.BACKEND_PROTOCOL}://{settings.BACKEND_HOST}:{settings.BACKEND_PORT}/Catalogos/'
+        self.TIMEOUT = 10  # segundos
 
     def post(self, request):
         """
