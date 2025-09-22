@@ -52,7 +52,7 @@ class EstadisticasCitasView(APIView):
     def get(self, request):
         try:
             # URLs de los servicios
-            API_CITAS = 'https://tu-backend-principal.onrender.com/Modulos/Citas/'
+            API_CITAS = 'http://backend:8000/Modulos/Citas/'
             API_PROFESIONALES = 'http://backend:8000/Catalogos/Profesionales-Salud/'
             API_ATLETAS = 'http://backend:8000/Catalogos/Atletas/'
             API_AREAS = 'http://backend:8000/Catalogos/Areas/'
