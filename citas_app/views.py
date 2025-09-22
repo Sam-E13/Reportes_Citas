@@ -51,11 +51,11 @@ class EstadisticasCitasView(APIView):
 
     def get(self, request):
         try:
-            # URLs de los servicios
-            API_CITAS = 'http://backend:8000/Modulos/Citas/'
-            API_PROFESIONALES = 'http://backend:8000/Catalogos/Profesionales-Salud/'
-            API_ATLETAS = 'http://backend:8000/Catalogos/Atletas/'
-            API_AREAS = 'http://backend:8000/Catalogos/Areas/'
+            # URLs usando configuración del settings.py
+            API_CITAS = settings.API_CITAS
+            API_PROFESIONALES = settings.API_PROFESIONALES
+            API_ATLETAS = settings.API_ATLETAS
+            API_AREAS = settings.API_AREAS
             
             # 1. Obtener todas las citas
             logger.info(f"Consultando citas en: {API_CITAS}")
