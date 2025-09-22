@@ -1,0 +1,46 @@
+# Entornos virtuales
+venv/
+env/
+.env/
+.venv/
+.reportes/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Archivos de desarrollo
+.git/
+.gitignore
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Archivos de logs
+*.log
+logs/
+
+# Archivos de base de datos local
+*.sqlite3
+*.db
+
+# Archivos estáticos y media que se generarán en el contenedor
+/staticfiles/
+/mediafiles/
+
+# Archivos de documentación
+docs/
+README.md
+
+# Archivos de prueba
+tests/
+test_*.py
+*_test.py
+
+# Archivos temporales
+.DS_Store
+Thumbs.db
